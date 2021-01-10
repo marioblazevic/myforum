@@ -57,26 +57,17 @@ class User extends Authenticatable
     public function follow(User $user)
     {
         return $this->follows()->save($user);
-        // DB::table('follows')->insert([
-        //     'user_id' => 1,
-        //     'following_user_id' => $user->id
-        // ]);
     }
 
     public function unfollow(User $user)
     {
         return $this->follows()->detach($user);
-        // DB::table('follows')->where('following_user_id',$user->id)->delete();
+
     }
 
     public function following(User $user)
     {
         return $this->follows()->where('following_user_id', $user->id)->exists();
-        // if(DB::table('follows')->where('user_id',1)->where('following_user_id', $user->id)->exists()){
-        //     return true;
-        // }else{
-        //     return false;
-        // }
     }
 
     public function toggleFollow(User $user)
