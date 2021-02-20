@@ -5,7 +5,6 @@ When user logs in he can se posts from users he follows.
 Every user can like or dislike post and leave a comment.
 Everything is protected with middleware or policies.
 
-This is my first simple project in laravel and i hope you like it :)
 
 Website images:
 
